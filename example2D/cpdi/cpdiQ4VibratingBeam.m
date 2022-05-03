@@ -1,29 +1,30 @@
-% This file implements the Material Point Method with CPDI2 interpolation
+% This file implements the Material Point Method with CPDI interpolation
 % described in the article
 %
-% A. Sadeghirad, R. M. Brannon, and J.E. Guilkey. Second-order convected
-% particle domain in- terpolation (CPDI2) with enrichment for weak discontinuities
-% at material interfaces. IJNME, 95(11):928-952, 2013.
-%
+% A. Sadeghirad, R. M. Brannon, and J. Burghardt. A convected particle domain
+% interpolation technique to extend applicability of the material point
+% method for problems involving massive deformations. IJNME, 86(12):1435--1456, 2011.
+
 % Two dimensional problems.
 % The grid is a structured mesh consisting of 4-noded bilinear elements (Q4).
+% Particles taken from a Q4 structured mesh.
 %
-% Vertical bar with extreme deformation.
+% Vibration of a compilant cantilever beam
 %
 % Vinh Phu Nguyen
-% Cardiff University, Wales, UK
-% May 2014, Saigon, Vietnam.
+% Monash University
+% 23 December 2016.
 
 %%
 
-addpath ../../fem_util/
-addpath ../../fem-functions/
-addpath ../../postProcessing/
-addpath ../../constitutiveModels/
 addpath ../../grid/
-addpath ../../util/
 addpath ../../basis/
-
+addpath ../../particleGen/
+addpath ../../constitutiveModels/
+addpath ../../util/
+addpath ../../geoMesh/
+addpath ../../externals/
+addpath ../../postProcessing/
 
 %%
 clc
@@ -35,43 +36,61 @@ opts = struct('Color','rgb','Bounds','tight','FontMode','fixed','FontSize',20);
 
 
 %% Material properties
-%
 
-E   = 1;           % Young's modulus
-nu  = 0.3;         % Poisson ratio
-rho = 1050e-12;    % density
-K   = E/3/(1-2*nu);    % bulk modulus
-mu    = E/2/(1+nu);% shear modulus
+E0   = 1e6;            % Young's modulus
+nu0  = 0.3;            % Poisson ratio
+rho0 = 1050;            % density
+kappa = 3-4*nu0;       % Kolosov constant
+mu    = E0/2/(1+nu0);  % shear modulus
+K   = E0/3/(1-2*nu0);    % bulk modulus
 lambda = K - 2/3*mu;
 
-g     = 1000e3; % gravity
+g     = 10;          % gravity m/s^2
+
+I = [1 0;0 1];
+
 bodyf = [0 -g];
 
-I  = [1 0;0 1];
 
-% be careful with vtkFileName1 and change it according to your computer!!!
-interval     = 1;
-vtkFileName  = 'bar';
-vtkFileName1 = '../results/cpdi/barGrid';
+interval  = 5;
+vtkFileName  = 'cpdiQ4CantileverBeam';
+vtkFileName1  = '../../results/cpdi/cpdiCantileverBeamGrid';
 
-stressState ='PLANE_STRAIN'; % either 'PLANE_STRAIN' or "PLANE_STRESS
-C = elasticityMatrix(E,nu,stressState);
-D = inv(C);
 
 tic;
 
 disp([num2str(toc),'   INITIALISATION '])
 
+
+
+%% Computational grid
+
+ghostCell=0;
+lx     = 8;
+ly     = 8;
+numx2 = 16;      % number of elements along X direction
+numy2 = 16;      % number of elements along Y direction
+[mesh]= buildGrid2D(lx,ly,numx2,numy2, ghostCell);
+element= mesh.element;
+node   = mesh.node;
+
+
+% find boundary nodes
+
+fixNodes=find(abs(node(:,1)-mesh.deltax)<1e-10);
+
 %%   particle distribution
 %
 
-l     = 1000;
-numx2 = 6;      % number of elements along X direction
-numy2 = 6;      % number of elements along Y direction
-[pmesh]= buildGrid2D(l,l,numx2,numy2, 0);
+l     = 4;
+h     = 1;
+numx2 = 24;      % number of elements along X direction
+numy2 = 6;       % number of elements along Y direction
+[pmesh]= buildGrid2D(l,h,numx2,numy2, 0);
 
-pmesh.node(:,1) = pmesh.node(:,1) +   l/2;
-pmesh.node(:,2) = pmesh.node(:,2) + 4*l/2;
+% move the solid to the correct position
+pmesh.node(:,1) = pmesh.node(:,1) +   mesh.deltax;
+pmesh.node(:,2) = pmesh.node(:,2) + 6;
 
 % store the particle mesh into a structure for convenience
 elemType           = 'Q4';
@@ -96,26 +115,11 @@ for e = 1:pmesh.elemCount
                 + coord(3,1)*coord(4,2)  - coord(4,1)*coord(3,2) ...
                 + coord(4,1)*coord(1,2)  - coord(1,1)*coord(4,2) );
     volume(e)  = a;
-    mass(e)    = a*rho;
+    mass(e)    = a*rho0;
     coords(e,:) = mean(coord); % center of each element=particle  
 end
 
 volume0 = volume;
-
-%% Computational grid
-
-ghostCell=0;
-lx     = (l/2)*4;
-ly     = (l/2)*7;
-numx2 = 4;      % number of elements along X direction
-numy2 = 7;      % number of elements along Y direction
-[mesh]= buildGrid2D(lx,ly,numx2,numy2, ghostCell);
-element= mesh.element;
-node   = mesh.node;
-
-% find boundary nodes
-
-fixNodes=find(abs(node(:,2)-6*l/2)<1e-10);
 
 %% node quantities
 
@@ -143,9 +147,9 @@ disp([num2str(toc),'   SOLVING '])
 
 tol   = 1e-16; % mass tolerance
 
-c     = sqrt(E/rho);
-dtime = 5.4006e-04;0.1*(mesh.deltax/c);
-time  = 0.11;
+c     = sqrt(E0/rho0);
+dtime = 0.2*(mesh.deltax/c);
+time  = 3.;
 t     = 0;
 nsteps = floor(time/dtime);
 
@@ -176,7 +180,9 @@ while ( t < time )
         
     % update nodal momenta   
     nforce    = niforce + neforce;
+    nforce   (fixNodes,1)  = 0;
     nforce   (fixNodes,2)  = 0;
+    nmomentum(fixNodes,1)  = 0;
     nmomentum(fixNodes,2)  = 0;
     
     nmomentum = nmomentum + nforce*dtime;
@@ -227,7 +233,7 @@ while ( t < time )
     
     if (  mod(istep,interval) == 0 )
         vtkFile = sprintf('../../results/cpdi/%s%d',vtkFileName,istep);
-        data.stress  = [stress zeros(pCount,1)];
+        data.stress  = [stress];
         data.pstrain = [];
         data.color   = color;
         data.velo    = velo;
@@ -240,10 +246,10 @@ while ( t < time )
     t     = t + dtime;
     istep = istep + 1;
     
-      % store time,velocty for plotting
-    coord = particles.node(particles.elem(3,:),:);
+    % store time,velocty for plotting
+    coord   = particles.node(particles.elem(numx2,:),:);
     coords3 = mean(coord); % center of each element=particle
-    u  = coords3(:,2)-coords(3,2);
+    u  = coords3(:,2)-coords(numx2,2);
     ta = [ta;t];
     ka = [ka;u];        
 end
@@ -254,7 +260,7 @@ end
 
 disp([num2str(toc),'   POST-PROCESSING '])
 
-pvdFile = fopen(strcat('../../results/cpdi/verticalBar/',vtkFileName,'.pvd'), 'wt');
+pvdFile = fopen(strcat('../../results/cpdi/',vtkFileName,'.pvd'), 'wt');
 
 fprintf(pvdFile,'<VTKFile byte_order="LittleEndian" type="Collection" version="0.1">\n');
 fprintf(pvdFile,'<Collection>\n');
@@ -313,3 +319,6 @@ plot(coords(:,1),coords(:,2),'k.','markersize',10);
 axis off
 
 disp([num2str(toc),'   DONE '])
+
+
+

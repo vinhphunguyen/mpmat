@@ -39,7 +39,7 @@ K   = E/3/(1-2*nu);    % bulk modulus
 mu    = E/2/(1+nu);% shear modulus
 lambda = K - 2/3*mu;
 
-g     = 3500e3; % gravity
+g     = 1500e3; % gravity
 bodyf = [0 -g];
 
 I  = [1 0;0 1];

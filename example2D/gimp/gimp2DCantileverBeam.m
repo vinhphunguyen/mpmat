@@ -56,7 +56,7 @@ Ly = 3;
 noX = 36;
 noY = 12;
 
-[mesh]=buildGrid2D(Lx,Ly,noX,noY);
+[mesh]=buildGrid2D(Lx,Ly,noX,noY,0);
 
 
 numx = noX;      % number of elements along X direction
@@ -83,7 +83,7 @@ noX = 32;
 noY = 4;
 
 
-pMesh =buildGrid2D(Lx,Ly,noX,noY); % particle mesh
+pMesh =buildGrid2D(Lx,Ly,noX,noY,0); % particle mesh
 
 pMesh.node(:,2) = pMesh.node(:,2) + 3/2-Ly/2;
 
@@ -360,8 +360,9 @@ while ( t < time )
     % VTK output
     
     if (  mod(istep,interval) == 0 )
-        vtkFile = sprintf('../results/%s%d',vtkFileName,istep);
-        VTKParticles(xp,vtkFile,s);
+       vtkFile = sprintf('../../results/gimp/%s%d',vtkFileName,istep);
+        data.stress  = [s zeros(pCount,1)];
+        VTKParticles(xp,vtkFile,data);
     end
     
     % advance to the next time step

@@ -174,7 +174,7 @@ tol   = 1e-16; % mass tolerance
 
 c     = sqrt(E/rho);
 dtime = 0.1*(mesh.deltax/c);
-time  = 0.;
+time  = 0.5;
 t     = 0;
 
 istep = 1;
@@ -308,16 +308,16 @@ end
 disp([num2str(toc),'   POST-PROCESSING '])
 
 %%
-ss=load('cpdiVerticalBar.mat');
+%ss=load('cpdiVerticalBar.mat');
 
 figure
 set(gca,'FontSize',14)
 hold on
 plot(ta(1:end),ka(1:end),'b-','LineWidth',1.6);
-plot(ss.ta(1:end),ss.ka(1:end),'r-','LineWidth',1.6);
+%plot(ss.ta(1:end),ss.ka(1:end),'r-','LineWidth',1.6);
 xlabel('Time')
 ylabel('Displacement')
-legend('uGIMP','CPDI')
+%legend('uGIMP','CPDI')
 %set(gca,'XTick',[0 0.5 1.0 1.5 2.0])
 axis([0 0.25 0 -1800])
 
