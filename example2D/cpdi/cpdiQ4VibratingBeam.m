@@ -51,11 +51,13 @@ I = [1 0;0 1];
 
 bodyf = [0 -g];
 
+if ~exist('../../results/cpdi', 'dir')
+   mkdir('../../results/cpdi')
+end
 
 interval  = 5;
 vtkFileName  = 'cpdiQ4CantileverBeam';
 vtkFileName1  = '../../results/cpdi/cpdiCantileverBeamGrid';
-
 
 tic;
 
@@ -84,13 +86,13 @@ fixNodes=find(abs(node(:,1)-mesh.deltax)<1e-10);
 
 l     = 4;
 h     = 1;
-numx2 = 24;      % number of elements along X direction
-numy2 = 6;       % number of elements along Y direction
+numx2 = 48;      % number of elements along X direction
+numy2 = 12;       % number of elements along Y direction
 [pmesh]= buildGrid2D(l,h,numx2,numy2, 0);
 
 % move the solid to the correct position
 pmesh.node(:,1) = pmesh.node(:,1) +   mesh.deltax;
-pmesh.node(:,2) = pmesh.node(:,2) + 6;
+pmesh.node(:,2) = pmesh.node(:,2) + 5.6;
 
 % store the particle mesh into a structure for convenience
 elemType           = 'Q4';
@@ -291,18 +293,18 @@ VTKPostProcess(mesh.node,mesh.element,2,'Quad4',vtkFileName1,...
 
 
 
-ss=load('cpdi2VerticalBar.mat');
+%ss=load('cpdi2VerticalBar.mat');
 
 figure
 set(gca,'FontSize',14)
 hold on
 plot(ta(1:end),ka(1:end),'b*','LineWidth',1.6);
-plot(ss.ta(1:end),ss.ka(1:end),'r-','LineWidth',1.6);
+%plot(ss.ta(1:end),ss.ka(1:end),'r-','LineWidth',1.6);
 xlabel('Time')
 ylabel('Displacement')
-legend('CPDI2','CPDI')
+%legend('CPDI2','CPDI')
 %set(gca,'XTick',[0 0.5 1.0 1.5 2.0])
-axis([0 0.25 0 -1800])
+%axis([0 0.25 0 -1800])
 
 save('cpdi2VerticalBar.mat', 'ta', 'ka');
 %%
