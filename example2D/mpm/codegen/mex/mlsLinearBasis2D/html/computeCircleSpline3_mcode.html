@@ -1,0 +1,21 @@
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="3,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type1" id="S2T25U3">w</span>] = computeCircleSpline(<span class="var type1" id="S3T3U6">x</span>,<span class="var type1" id="S4T3U7">xI</span>,<span class="var type1" id="S5T1U8">d</span>,<span class="var type1" id="S6T5U9">form</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="3,2" id="srcline2"> 2</a></span><span class="line"><span class="comment">% Compute cubic and quartic spline function</span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,3" id="srcline3"> 3</a></span><span class="line"><span class="comment">% Inputs:</span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,4" id="srcline4"> 4</a></span><span class="line"><span class="comment">% x (1x2)  : coordinate of point at which w is to be evaluated</span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,5" id="srcline5"> 5</a></span><span class="line"><span class="comment">% xI (1x2) : coord of node I</span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,6" id="srcline6"> 6</a></span><span class="line"><span class="comment">% d        : size of the support</span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,7" id="srcline7"> 7</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="3,8" id="srcline8"> 8</a></span><span class="line"><span class="mxinfo " id="T1:U6"><span class="var type1" id="S7T1U12">r</span> = <span class="mxinfo " id="T1:U8"><span class="mxinfo " id="T1:U9">norm( <span class="mxinfo " id="T3:U10"><span class="var type1" id="S3T3U17">x</span> - <span class="var type1" id="S4T3U18">xI</span></span> )</span>/<span class="var type1" id="S5T1U19">d</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="3,9" id="srcline9"> 9</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="3,10" id="srcline10">10</a></span><span class="line"><span class="keyword">switch</span> <span class="var type1" id="S6T5U21">form</span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,11" id="srcline11">11</a></span><span class="line">  <span class="keyword">case</span> <span class="string">'cubic_spline'</span> </span></span>
+<span class="srcline"><span class="lineno"><a href="3,12" id="srcline12">12</a></span><span class="line">     [<span class="var type0" id="S2T0U27">w</span>,~] = cubicSpline(<span class="var type0" id="S7T0U31">r</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="3,13" id="srcline13">13</a></span><span class="line">  <span class="keyword">case</span> <span class="string">'quartic_spline'</span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,14" id="srcline14">14</a></span><span class="line">     [<span class="var type0" id="S2T0U37">w</span>,~] = quarticSpline(<span class="var type0" id="S7T0U41">r</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="3,15" id="srcline15">15</a></span><span class="line">  <span class="keyword">otherwise</span> </span></span>
+<span class="srcline"><span class="lineno"><a href="3,16" id="srcline16">16</a></span><span class="line">     error(<span class="string">'Grr. Unknown functional form'</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="3,17" id="srcline17">17</a></span><span class="line"><span class="keyword"><span class="keyword">end</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="3,18" id="srcline18">18</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="3,19" id="srcline19">19</a></span><span class="line"></span></span>
+</pre>

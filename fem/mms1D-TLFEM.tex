@@ -1,0 +1,75 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.254\textwidth,
+height=0.2\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmode=log,
+xmin=0.0009765625,
+xmax=0.125,
+xminorticks=true,
+xlabel={Element size},
+ymode=log,
+ymin=1e-10,
+ymax=0.01,
+yminorticks=true,
+ylabel={Error},
+axis background/.style={fill=white},
+xmajorgrids,
+xminorgrids,
+ymajorgrids,
+yminorgrids,
+legend style={at={(0.541,0.783)}, anchor=south west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=red, line width=1.2pt, mark=square, mark options={solid, red}]
+  table[row sep=crcr]{%
+0.125	2.7210871935266e-06\\
+0.0625	6.83958852699493e-07\\
+0.03125	1.71213496021139e-07\\
+0.015625	4.28174831499082e-08\\
+0.0078125	1.07213912187102e-08\\
+0.00390625	2.67833866200387e-09\\
+0.001953125	6.69089093694803e-10\\
+0.0009765625	1.67303750930587e-10\\
+};
+\addlegendentry{G=0.0001}
+
+\addplot [color=blue, line width=1.2pt, mark=asterisk, mark options={solid, blue}]
+  table[row sep=crcr]{%
+0.125	0.001355239633159\\
+0.0625	0.000340675164174658\\
+0.03125	8.52813390384828e-05\\
+0.015625	2.13273054775812e-05\\
+0.0078125	5.33995939618242e-06\\
+0.00390625	1.3340585447377e-06\\
+0.001953125	3.33274801985119e-07\\
+0.0009765625	8.33339433178058e-08\\
+};
+\addlegendentry{G=0.05}
+
+\end{axis}
+
+\begin{axis}[%
+width=0.327\textwidth,
+height=0.245\textwidth,
+at={(-0.043\textwidth,-0.027\textwidth)},
+scale only axis,
+xmin=0,
+xmax=1,
+ymin=0,
+ymax=1,
+axis line style={draw=none},
+ticks=none,
+axis x line*=bottom,
+axis y line*=left,
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\end{axis}
+\end{tikzpicture}%

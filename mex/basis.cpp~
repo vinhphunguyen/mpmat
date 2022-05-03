@@ -1,0 +1,36 @@
+#include "basis.h"
+#include <math.h>
+#include <stdlib.h>
+
+
+void computeMPMBasis1D (double x, double h, double& f, double& df)
+{
+   if ( abs(x) <= h ){
+       f  = 1.0 - abs(x)/h;
+       double sigx = ( x > 0 ) ? 1. : -1.;
+       df = -1/h*sigx;
+   }
+   else{
+       f  = 0;
+       df = 0;
+   }
+}
+
+
+
+void computeMPMBasis2D (double* x, double* h, double& f, double& df1, double& df2)
+{
+   // compute the 1D shape functions
+
+   double fx,fy,dfx,dfy;
+
+   computeMPMBasis1D ( x[0], h[0], fx, dfx );
+   computeMPMBasis1D ( x[1], h[1], fy, dfy );
+
+
+   // compute the 2D shape functions as tensor products
+
+   f     = fx  * fy;
+   df1   = dfx * fy;
+   df2   = fx  * dfy;
+}

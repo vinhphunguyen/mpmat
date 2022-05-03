@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Code Generation Report</title>
+<link rel="stylesheet" type="text/css" href="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/eml_report.css" />
+<link rel="stylesheet" type="text/css" href="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/jQuery/ui.resizable.css" />
+<link rel="stylesheet" type="text/css" href="file:////Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/html/index.css" />
+
+<script type="text/javascript" src="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/jQuery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/jQuery/jquery-ui-1.7.custom.min.js"></script>
+<script type="text/javascript" src="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/jQuery/jquery.tablesorter.mod.js"></script>
+<script type="text/javascript" src="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/jQuery/jquery.hotkeys-0.7.8.js"></script>
+<script type="text/javascript" src="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/eml_report_interactions.js"></script>
+<script type="text/javascript" src="file:////Applications/MATLAB_R2015a.app/toolbox/coder/coder/resources/eml_report_layout.js"></script>
+<script type="text/javascript" src="file:////Applications/MATLAB_R2015a.app/toolbox/rtw/rtw/+coder/+report/resources/rtwshrink.js"></script>
+<script type="text/javascript">
+var localizedMessages = {
+    callSelectPrompt: "Select a function call:",
+    callSelectSource: "Calls from this function",
+    callSelectTarget: "Calls to this function",
+    infoForExpression: "Information for the selected expression:",
+    infoForVarType: "Information for the selected variable:",
+    infoForVarConst: "Information for the selected compile-time constant:",
+    infoForVarNone: "This variable does not have information associated with it.",
+    infoForFilter: "Matched {0}/{1} functions, {2}/{3} methods",
+    autoExtrinsicCall: "Only supported within the MATLAB environment."
+};
+var keyBindings = {
+        selectMCodeTab: "Ctrl+m",
+    selectCallStackTab: "Ctrl+k",
+        selectCCodeTab: "Ctrl+c",
+       selectReportTab: "Ctrl+r",
+     selectCenterPanel: "Ctrl+w",
+      selectSummaryTab: "Ctrl+s",
+     selectMessagesTab: "Ctrl+a",
+    selectWatchListTab: "Ctrl+v",
+     selectBuildLogTab: "Ctrl+t"
+};
+var functionInfoTable = {
+ MATLABcode1: "mlsLinearBasis2D1_mcode.html",
+ fpath1: "/Users/vinhphunguyen/my-codes/MAMP/mls/mlsLinearBasis2D.m",
+ lines1: [1, 1, 39],
+ watch1: "mlsLinearBasis2D1_watch.html",
+ title1: "Function: <span class='functionname'><a title='/Users/vinhphunguyen/my-codes/MAMP/mls/mlsLinearBasis2D.m' class='functionlink' href=\"matlab: open('/Users/vinhphunguyen/my-codes/MAMP/mls/mlsLinearBasis2D.m')\">mlsLinearBasis2D</a></span>",
+ tcall1: [  ],
+ scall1: [ [ "From line 23 to computeCircleSpline", "42#srcline1" ] ],
+ MATLABcode39: "quarticSpline39_mcode.html",
+ fpath39: "/Users/vinhphunguyen/my-codes/MAMP/mls/quarticSpline.m",
+ lines39: [1, 1, 11],
+ watch39: "quarticSpline39_watch.html",
+ title39: "Function: <span class='functionname'><a title='/Users/vinhphunguyen/my-codes/MAMP/mls/quarticSpline.m' class='functionlink' href=\"matlab: open('/Users/vinhphunguyen/my-codes/MAMP/mls/quarticSpline.m')\">quarticSpline</a></span>",
+ tcall39: [ [ "From computeCircleSpline line 14", "42#F39N7:B40" ] ],
+ scall39: [  ],
+ MATLABcode40: "cubicSpline40_mcode.html",
+ fpath40: "/Users/vinhphunguyen/my-codes/MAMP/mls/cubicSpline.m",
+ lines40: [1, 1, 14],
+ watch40: "cubicSpline40_watch.html",
+ title40: "Function: <span class='functionname'><a title='/Users/vinhphunguyen/my-codes/MAMP/mls/cubicSpline.m' class='functionlink' href=\"matlab: open('/Users/vinhphunguyen/my-codes/MAMP/mls/cubicSpline.m')\">cubicSpline</a></span>",
+ tcall40: [ [ "From computeCircleSpline line 12", "42#F40N3:B30" ] ],
+ scall40: [  ],
+ MATLABcode42: "computeCircleSpline42_mcode.html",
+ fpath42: "/Users/vinhphunguyen/my-codes/MAMP/mls/computeCircleSpline.m",
+ lines42: [1, 1, 20],
+ watch42: "computeCircleSpline42_watch.html",
+ title42: "Function: <span class='functionname'><a title='/Users/vinhphunguyen/my-codes/MAMP/mls/computeCircleSpline.m' class='functionlink' href=\"matlab: open('/Users/vinhphunguyen/my-codes/MAMP/mls/computeCircleSpline.m')\">computeCircleSpline</a></span>",
+ tcall42: [ [ "From mlsLinearBasis2D line 23", "1#F42N2:B68" ] ],
+ scall42: [ [ "From line 14 to quarticSpline", "39#srcline1" ], [ "From line 12 to cubicSpline", "40#srcline1" ] ],
+ rootFcnID: "1",
+ firstPage: "1",
+ htmlRoot: "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/html/"
+};
+var scriptInfoTable = {
+ fpath1: "/Users/vinhphunguyen/my-codes/MAMP/mls/mlsLinearBasis2D.m",
+ fpath2: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elmat/length.m",
+ fpath3: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_index_class.m",
+ fpath4: "/Applications/MATLAB_R2015a.app/toolbox/shared/coder/coder/+coder/+internal/isBuiltInNumeric.m",
+ fpath5: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+blas/inline.p",
+ fpath6: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+blas/use_refblas.p",
+ fpath7: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_switch_helper.m",
+ fpath8: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+blas/threshold.p",
+ fpath9: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+blas/xnrm2.p",
+ fpath10: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_float_model.m",
+ fpath11: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_realmin.m",
+ fpath12: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elmat/realmin.m",
+ fpath13: "/Applications/MATLAB_R2015a.app/toolbox/shared/coder/coder/+coder/+internal/indexMinus.m",
+ fpath14: "/Applications/MATLAB_R2015a.app/toolbox/shared/coder/coder/+coder/+internal/indexTimes.m",
+ fpath15: "/Applications/MATLAB_R2015a.app/toolbox/shared/coder/coder/+coder/+internal/indexPlus.m",
+ fpath16: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/fixedpoint/isnumerictype.m",
+ fpath17: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/fixedpoint/isfi.m",
+ fpath18: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elmat/intmax.m",
+ fpath19: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elmat/intmin.m",
+ fpath20: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_int_forloop_overflow_check.m",
+ fpath21: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elfun/eml_scalar_abs.m",
+ fpath22: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elfun/abs.m",
+ fpath23: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+refblas/xnrm2.p",
+ fpath24: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/blas/eml_xnrm2.m",
+ fpath25: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/matfun/norm.m",
+ fpath26: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_scalexp_compatible.m",
+ fpath27: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/div.p",
+ fpath28: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_div.m",
+ fpath29: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/ops/rdivide.m",
+ fpath30: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/ops/mrdivide.p",
+ fpath31: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_strcmp.m",
+ fpath32: "/Users/vinhphunguyen/my-codes/MAMP/mls/quarticSpline.m",
+ fpath33: "/Users/vinhphunguyen/my-codes/MAMP/mls/cubicSpline.m",
+ fpath34: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/lang/error.m",
+ fpath35: "/Users/vinhphunguyen/my-codes/MAMP/mls/computeCircleSpline.m",
+ fpath36: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elmat/ismatrix.m",
+ fpath37: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/scalarEg.p",
+ fpath38: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_scalar_eg.m",
+ fpath39: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/scalexpAllocNoCheck.p",
+ fpath40: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/scalexpAlloc.p",
+ fpath41: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_scalexp_alloc.m",
+ fpath42: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elfun/eml_scalar_floor.m",
+ fpath43: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/elfun/floor.m",
+ fpath44: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/ops/power.m",
+ fpath45: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/ops/mpower.m",
+ fpath46: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/ops/eml_mtimes_helper.m",
+ fpath47: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+refblas/xcabs1.p",
+ fpath48: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/blas/eml_xcabs1.m",
+ fpath49: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_warning.m",
+ fpath50: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/eml_lusolve.m",
+ fpath51: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/ops/mldivide.p",
+ fpath52: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+blas/xdot.p",
+ fpath53: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+refblas/xdotx.p",
+ fpath54: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+refblas/xdot.p",
+ fpath55: "/Applications/MATLAB_R2015a.app/toolbox/coder/coder/+coder/+internal/+blas/xdotu.p",
+ fpath56: "/Applications/MATLAB_R2015a.app/toolbox/eml/lib/matlab/eml/blas/eml_xdotu.m"
+};
+</script>
+</head>
+<body>
+
+<div class="west">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="MATLABcode"><span>MATLAB code</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="callstack"><span>Call stack</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="ccode"><span>C code</span></span></li>
+</ul>
+<div id="MATLABcodebody" class="ui-tabs-panel">
+<!-- Begin Filter -->
+<div class="grayline methodset" onclick="filterClick(event);">
+<a class="collapsed">Filter</a>
+</div>
+<div id="filterbody" class="hidden">
+<table class="myfunc-filter-tbl">
+<tr>
+<td title="Use this filter to display only functions and methods that contain variables or expressions with the specified attributes." colspan="2" class="checkbox">
+<div class="myfunc-filterby-chk"><input type="checkbox" class="filterenable" />
+<div class="filter-enable-lbl">Filter functions and methods</div></div></td></tr><tr>
+<td class="label"><div class="myfunc-filterby-lbl">Filter by:</div></td>
+<td class="select">
+<div class="filters">
+<select class="myfunc-filterby">
+<option id="size">Size</option>
+<option id="complex">Complexity</option>
+<option id="class">Class</option>
+</select>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="label"><div class="myfunc-filterstr-lbl">Filter:</div></td>
+<td class="input"><div>
+
+<div class="size">
+<select class="myfunc-filter size">
+<option value="1 39 40 42">1 x 1</option>
+<option value="1 42">1 x 12</option>
+<option value="1 42">1 x 2</option>
+<option value="1">1024 x 1</option>
+<option value="1">1024 x 2</option>
+<option value="1">3 x 1</option>
+<option value="1">3 x 3</option>
+<option value="1"><b>:</b>52 x 1</option>
+</select>
+</div>
+
+<div class="complex">
+<select class="myfunc-filter complex">
+<option value="">Complex values</option>
+<option value="1 39 40 42">Real values</option>
+</select>
+</div>
+<!-- Begin Class Filter -->
+<div class="class">
+<select class="myfunc-filter class">
+<option value="1 42">char</option>
+<option value="1 39 40 42">double</option>
+</select>
+</div>
+<!-- End Class Filter -->
+</div>
+</td>
+</tr>
+</table>
+<div class="myfunc-count"></div>
+</div>
+<!-- End Filter -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionSetClick(event);">
+<a class="expanded">Functions</a>
+</div>
+<!-- Begin Function Tree -->
+<div id="functiontreebody">
+<div class="functionwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionTreeClick(event);">
+<ol class="tree">
+<!-- Begin Function Tree Roots -->
+<li class="leaf  passed"><a href="#" class="fcn " id="F42N2:F1">computeCircleSpline</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F40N3:F2">cubicSpline</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F1N6:F3">mlsLinearBasis2D</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F39N7:F4">quarticSpline</a></li>
+<!-- End Function Tree Roots -->
+</ol>
+<!-- Function Tree Nodes -->
+<div class="functiontreenodes hidden">
+</div>
+<!-- End Function Tree Nodes -->
+</div>
+</div>
+<!-- End Function Tree -->
+</div>
+<!-- Begin Call Tree -->
+<div id="callstackbody" class="ui-tabs-panel hidden">
+<div class="treewrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="callTreeClick(event);">
+<ol class="tree">
+<!-- Call Tree Root -->
+<li class="node collapsed passed"><a href="#" class="fcn " id="F1N6:L1">mlsLinearBasis2D</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F42N2:L2">computeCircleSpline</a></li>
+</ul>
+</li>
+</ol>
+<!-- Call Tree Nodes -->
+<div class="callstacknodes hidden">
+<ol class="callstacknode" id="callstacknode1">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F1N6:l1">mlsLinearBasis2D</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F42N2:l2">computeCircleSpline</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode39">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F39N7:l3">quarticSpline</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode40">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F40N3:l4">cubicSpline</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode42">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F42N2:l5">computeCircleSpline</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn " id="F39N7:l6">quarticSpline</a></li>
+<li class="leaf passed"><a href="#" class="fcn " id="F40N3:l7">cubicSpline</a></li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<!-- End Call Tree -->
+<!-- Begin C Code -->
+<div id="ccodebody" class="ui-tabs-panel hidden">
+<div class="grayline methodset" onclick="ccodeClick(event,1);">
+<a class="expanded">Target Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody1" class="visible">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="eml_warning_c.html"><td class="ccode"><a href="#">eml_warning.c</a></td></tr>
+<tr class="ccode" id="eml_warning_h.html"><td class="ccode"><a href="#">eml_warning.h</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_c.html"><td class="ccode"><a href="#">mlsLinearBasis2D.c</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_h.html"><td class="ccode"><a href="#">mlsLinearBasis2D.h</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_data_c.html"><td class="ccode"><a href="#">mlsLinearBasis2D_data.c</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_data_h.html"><td class="ccode"><a href="#">mlsLinearBasis2D_data.h</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_initialize_c.html"><td class="ccode"><a href="#">mlsLinearBasis2D_initialize.c</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_initialize_h.html"><td class="ccode"><a href="#">mlsLinearBasis2D_initialize.h</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_terminate_c.html"><td class="ccode"><a href="#">mlsLinearBasis2D_terminate.c</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_terminate_h.html"><td class="ccode"><a href="#">mlsLinearBasis2D_terminate.h</a></td></tr>
+<tr class="ccode" id="mlsLinearBasis2D_types_h.html"><td class="ccode"><a href="#">mlsLinearBasis2D_types.h</a></td></tr>
+<tr class="ccode" id="rt_nonfinite_h.html"><td class="ccode"><a href="#">rt_nonfinite.h</a></td></tr>
+<tr class="ccode" id="rtwtypes_h.html"><td class="ccode"><a href="#">rtwtypes.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+<div class="grayline methodset" onclick="ccodeClick(event,3);">
+<a class="collapsed">Interface Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody3" class="hidden">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="_coder_mlsLinearBasis2D_api_c.html"><td class="ccode"><a href="#">_coder_mlsLinearBasis2D_api.c</a></td></tr>
+<tr class="ccode" id="_coder_mlsLinearBasis2D_api_h.html"><td class="ccode"><a href="#">_coder_mlsLinearBasis2D_api.h</a></td></tr>
+<tr class="ccode" id="_coder_mlsLinearBasis2D_info_c.html"><td class="ccode"><a href="#">_coder_mlsLinearBasis2D_info.c</a></td></tr>
+<tr class="ccode" id="_coder_mlsLinearBasis2D_info_h.html"><td class="ccode"><a href="#">_coder_mlsLinearBasis2D_info.h</a></td></tr>
+<tr class="ccode" id="_coder_mlsLinearBasis2D_mex_c.html"><td class="ccode"><a href="#">_coder_mlsLinearBasis2D_mex.c</a></td></tr>
+<tr class="ccode" id="_coder_mlsLinearBasis2D_mex_h.html"><td class="ccode"><a href="#">_coder_mlsLinearBasis2D_mex.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+</div>
+<!-- End C Code -->
+</div>
+<!-- Tooltips -->
+<div class="aux hidden">
+<div class="tooltips">
+<div class="tooltip" id="TT1"><table class="tooltip"><tr><th>Size</th><td><b>:</b>52 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT2"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT3"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT4"><table class="tooltip"><tr><th>Size</th><td>1024 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT5"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT6"><table class="tooltip"><tr><th>Size</th><td>1024 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT7"><table class="tooltip"><tr><th>Size</th><td>1 x 12</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT8"><table class="tooltip"><tr><th>Size</th><td>1 x 23</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT9"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT10"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT11"><table class="tooltip"><tr><th>Size</th><td>1 x 7</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT12"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT13"><table class="tooltip"><tr><th>Size</th><td>1 x 19</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT14"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT15"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT16"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT17"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT18"><table class="tooltip"><tr><th>Size</th><td>1 x 14</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT19"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT20"><table class="tooltip"><tr><th>Size</th><td>3 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT21"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT22"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT23"><table class="tooltip"><tr><th>Size</th><td>1 x 4</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT24"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT25"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT26"><table class="tooltip"><tr><th>Size</th><td>1 x 28</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT27"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>mxArray</td></tr></table></div>
+<div class="tooltip" id="TT28"><table class="tooltip"><tr><th>Size</th><td>1 x 27</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+</div>
+</div>
+<!-- End Tooltips -->
+
+<div class="south">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="summary"><span>Summary</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="messages"><span>All Messages (0)</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="watchlist"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item hidden"><span class="tab-link" id="watchload"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="buildlog1"><span>Target Build Log</span></span></li>
+</ul>
+
+<!-- Compilation Summary -->
+<div id="summarybody" class="ui-tabs-panel">
+<table cellpadding="1" cellspacing="4">
+<tr><td>C source code generated on:</td><td>11-Oct-2015 00:36:58</td></tr>
+<tr><td>Coding target:</td><td>C MEX Function</td></tr>
+<tr><td>Number of errors:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of warnings:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of notices:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+</table>
+<p/><p/><table>
+<tr><td><b>Tell Us What You Think</b></td></tr>
+<tr><td>We value your feedback. Please take a few minutes to answer this short questionnaire regarding the Code Generation Report.</td></tr>
+<tr><td><a href="matlab: web('http://www.customersat3.com/TakeSurvey.asp?si=ELu7GTnTYtk%3D','-browser');">&gt;&gt;Provide Feedback</a></td></tr>
+</table>
+</div>
+
+<!-- Message Table -->
+<div id="messagesbody" class="ui-tabs-panel hidden">
+<div>
+<div class="msgsuccess">Code generation successful. Click here to <a href="javaScript:selectSummaryTab();">view summary</a>.</div>
+</div>
+</div>
+<!-- Watchlist Table -->
+<div id="watchlistbody" class="ui-tabs-panel hidden">
+</div>
+<div id="watchloadbody" class="ui-tabs-panel hidden">
+Loading Variables table ...
+</div>
+
+<!-- Target Build Log -->
+<div id="buildlog1body" class="ui-tabs-panel hidden">
+<div class="grayline"></div>
+<table cellpadding="4" cellspacing="1"><tr>
+<td align="left" class="td-linebottomrt-gray" colspan="2">Build Parameters</td>
+</tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Build directory</td>
+<td align="left" valign="top" class="td-linebottomrt-link"><a href="matlab: cd('/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D')">/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D</a></td></tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Make wrapper</td>
+<td align="left" valign="top" class="td-linebottomrt-link">sh mlsLinearBasis2D_mex.sh</td></tr>
+</table>
+<br/>
+<table border="1" cellpadding="4" cellspacing="1" width="100%">
+<tr><td align="left" class="td-linebottomrt-gray">Build Log</td></tr>
+<tr><td valign="top" class="td-script">
+<pre>
+<span class="td-line-number">    1   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "mlsLinearBasis2D_data.c"</span>
+<span class="td-line-number">    2   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "mlsLinearBasis2D_initialize.c"</span>
+<span class="td-line-number">    3   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "mlsLinearBasis2D_terminate.c"</span>
+<span class="td-line-number">    4   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "mlsLinearBasis2D.c"</span>
+<span class="td-line-number">    5   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "eml_warning.c"</span>
+<span class="td-line-number">    6   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "interface/_coder_mlsLinearBasis2D_api.c"</span>
+<span class="td-line-number">    7   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "interface/_coder_mlsLinearBasis2D_mex.c"</span>
+<span class="td-line-number">    8   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -c -fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE -DMX_COMPAT_32 -O2 -DNDEBUG  -I "/Applications/MATLAB_R2015a.app/simulink/include" -I "/Applications/MATLAB_R2015a.app/toolbox/shared/simtargets" -I "/Users/vinhphunguyen/my-codes/MAMP/mls" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D" -I "/Users/vinhphunguyen/my-codes/MAMP/mls/codegen/mex/mlsLinearBasis2D/interface" -I "/Applications/MATLAB_R2015a.app/extern/include" -I "." "interface/_coder_mlsLinearBasis2D_info.c"</span>
+<span class="td-line-number">    9   </span><span class="td-line-normal">/usr/bin/xcrun -sdk macosx10.11 clang -Wl,-exported_symbols_list,mlsLinearBasis2D_mex_mex.map mlsLinearBasis2D_data.o mlsLinearBasis2D_initialize.o mlsLinearBasis2D_terminate.o mlsLinearBasis2D.o eml_warning.o _coder_mlsLinearBasis2D_api.o _coder_mlsLinearBasis2D_mex.o _coder_mlsLinearBasis2D_info.o -Wl,-twolevel_namespace -undefined error -arch x86_64 -mmacosx-version-min=10.11 -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -bundle -L/Applications/MATLAB_R2015a.app/bin/maci64 -lmx -lmex -lmat -lc++   -o mlsLinearBasis2D_mex.mexmaci64    -lemlrt -lcovrt -lut -lmwmathutil -lmwblas </span>
+</pre>
+</td></tr></table>
+
+</div>
+</div>
+<!-- Begin MATLAB Code Panel -->
+<div class="center">
+<div class="center-title">
+<div class="ui-tabs-nav-item ui-tabs-selected">
+<span class="functiontitle">
+</span>
+<!-- Begin Call Sites -->
+<span id="callsiteselecttable" class="call-sites-tbl">
+<span id="callsiteselectlabel" class="filtered">Calls:</span>
+<select id="callsiteselect" onchange="callSiteChange(event)">
+<option value="callsiteprompt">Select a function call:</option>
+</select>
+</span>
+<!-- End Call Sites -->
+</div>
+</div>
+<div class="ui-tabs-panel">
+<div class="code" onmouseover="mcodeMouseOver(event);" onmouseout="mcodeMouseOut(event);"onclick="mcodeClick(event);">
+</div>
+</div>
+</div>
+<!-- End MATLAB Code Panel -->
+</body>
+</html>

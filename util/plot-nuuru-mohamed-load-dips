@@ -1,0 +1,52 @@
+opts = struct('Color','rgb','Bounds','tight','FontMode','fixed','FontSize',14);
+
+
+load('mixed-mode-experiment.mat');
+load('mixed-mode-experiment-shear.mat');
+load('mixed-mode-giang.mat');
+load('giang-shear.mat');
+
+fem1=load('nuru-ylodi-720.dat');
+fem2=load('nuru-ylodi-2000.dat');
+fem3=load('nuru-ylodi-mesh7000.dat');
+
+fem1(:,[2 4]) = fem1(:,[2 4])/1000;
+fem2(:,[2 4]) = fem2(:,[2 4])/1000;
+fem3(:,[2 4]) = fem3(:,[2 4])/1000;
+
+%plot load-displacement curve
+
+figure
+set(gca,'FontSize',14)
+hold on
+plot(exp(:,1),exp(:,2),  'bo-','LineWidth',1.9);
+plot(fem1(:,3),fem1(:,4),'r-','LineWidth',1.6);
+plot(fem2(:,3),fem2(:,4),'b-','LineWidth',1.6);
+plot(fem3(:,3),fem3(:,4),'g-','LineWidth',1.6);
+xlabel('\delta_n [mm]')
+ylabel('P_n [kN]')
+legend('experiment','FEM, 720 elems', 'FEM, 2000 elems', 'FEM, 7000 elems')
+axis([0 0.1 -5 21])
+grid on
+
+
+
+fem3D=load('nuru-ylodi-3D.dat');
+
+fem3D(:,[2 4]) = fem3D(:,[2 4])/1000;
+
+figure
+set(gca,'FontSize',14)
+hold on
+plot(exp(:,1),exp(:,2),  'bo-','LineWidth',1.9);
+plot(fem3D(:,3),fem3D(:,4),'r-','LineWidth',1.6);
+plot(fem2(:,3),fem2(:,4),'b-','LineWidth',1.6);
+xlabel('\delta_n [mm]')
+ylabel('P_n [kN]')
+legend('experiment','3D', '2D')
+axis([0 0.1 -5 21])
+grid on
+
+
+
+

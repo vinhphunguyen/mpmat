@@ -1,0 +1,25 @@
+Centroidal voronoi cells for a cube 4x1x1 with 100 polyhedra and saved in ply format:
+The second command is for 2D case.
+The first two commands give a file with default name.
+
+neper -T -n 100 -id 1 -domain "cube(4,1,1)" -format "ply" -centroid 1
+neper -T -n 100 -id 1 -domain "square(4,1)" -format "ply" -centroid 1
+neper -T -n 100 -id 1 -domain "cube(4,1,1)" -format "ply" -centroid 1 -o
+"beam100-centroid"
+
+Centroidal voronoi cells for a cylinder with diameter 10 and height of 50 with 100 polyhedra and saved in ply format:
+
+neper -T -n 100 -id 1 -domain "cylinder(50,10)" -format "ply" -centroid 1
+
+
+Centroidal voronoi cells for a sphere with diameter 10 with 100 polyhedra and saved in ply format:
+neper -T -n 100 -id 1 -domain "sphere(10)" -format "ply" -centroid 1
+neper -T -n 100 -id 1 -domain "circle(10)" -format "ply" -centroid 1
+
+Regular voronoi cells for a cube 4x1x1 with 100 polyhedra and saved in ply format:
+-reg 1: remove small edges/faces
+
+neper -T -n 100 -id 1 -domain "cube(4,1,1)" -format "ply" -reg 1 
+
+
+-ttype "periodic"
