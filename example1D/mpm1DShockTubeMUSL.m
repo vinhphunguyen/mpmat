@@ -12,7 +12,14 @@
 
 %%
 
-addpath ../fem_util/
+addpath ../grid/
+addpath ../basis/
+addpath ../particleGen/
+addpath ../constitutiveModels/
+addpath ../util/
+addpath ../geoMesh/
+addpath ../externals/
+addpath ../postProcessing/
 
 
 %%
@@ -288,14 +295,14 @@ end
 
 % exact solution
 
-exact = load('sod-exact.mat');
+%exact = load('sod-exact.mat');
 
 figure
 subplot(2,2,1)
 set(gca,'FontSize',14)
 hold on
 plot(xp,rp,'b-','LineWidth',1.6);
-plot(exact.data.x,exact.data.rho,'r-','LineWidth',1.6);
+%plot(exact.data.x,exact.data.rho,'r-','LineWidth',1.6);
 xlabel('Position')
 ylabel('Density')
 axis([0 1 0 1.2])
